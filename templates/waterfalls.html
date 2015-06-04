@@ -1,0 +1,51 @@
+<section>
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>Waterfalls</h2>
+    </div>
+    </div>
+  <div class="row intro">
+    <div class="medium-12 columns text-justify">
+    <span class="show-for-medium-up">On this page I have listed all the waterfalls I have visited with links to pictures taken on my travels. I only included the waterfalls whose names I know.</span> Select the name to see a photo and select its location to see its imprecise map location. You can also find the nearest waterfall to a location you input. Distance is as the crow flies. Do not rely on this or the maps here for directions.
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 medium-6 columns">
+      <form name="locateForm" data-ng-submit="locateForm.$valid && ListCtrl.getDistanceRank()" novalidate>
+        <label for="findLocation">Find the nearest waterfalls to a location.</label>
+        <input type="text" id="findLocation" name="location" value="" aria-descriptionby="location-address" placeholder="Enter a location" data-ng-model="ListCtrl.location" required>
+        <input type="submit" class="button" value="Submit" />
+      </form>
+      <div data-alert class="alert-box alert" data-ng-if="ListCtrl.errorMsg" data-ng-bind="ListCtrl.errorMsg">
+      </div>
+      <div data-alert class="alert-box warning" data-ng-if="ListCtrl.firstResult" data-ng-bind="'Using first location found: ' + ListCtrl.firstResult">
+      </div>
+    </div>    
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th data-ng-if="ListCtrl.ordering == 'rank'">Direct Distance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ng-repeat="entry in ListCtrl.entries | orderBy:ListCtrl.ordering">
+            <td><a data-ng-click="ListCtrl.openPhotoModal(entry)" data-ng-bind-html="entry.name"></a></td>
+            <td><span data-ng-bind-html="entry.place"></span>, <span data-ng-bind-html="entry.location"></span>, <span data-ng-bind-html="entry.country"></span> <a data-ng-click="ListCtrl.openMapModal(entry)"><i class="fa fa-map-marker"></i></a></td>
+            <td data-ng-if="ListCtrl.ordering == 'rank'" data-ng-bind="(entry.rank | number:0) + ' miles'"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <a href="http://www.naturalhighs.net/waterfalls/ring/w_webring.htm"><img src="/assets/images/lists/webring.jpg" alt="Visit the Waterfalls WebRing Home Page" /></a><br />
+      [ <a href="http://V.webring.com/go?ring=waterfallsring&amp;id=51&amp;prev">&lt; Previous</a> | <a href="http://V.webring.com/go?ring=waterfallsring&amp;id=51&amp;random">Random</a> | <a href="http://V.webring.com/hub?ring=waterfallsring&amp;id=51&amp;hub">Ring Hub</a> | <a href="http://V.webring.com/go?ring=waterfallsring&amp;id=51&amp;next">Next &gt;</a> ]
+    </div>
+  </div>
+</section>

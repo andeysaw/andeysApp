@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Andrew Sawadisavi's web site of photos from his travels" />
+    <meta name="keywords" content="andeys photos photography travel trips waterfalls" />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="http://andeys.com/humans.txt" />
+    <title>Andeys</title>
+    <link rel="stylesheet" href="/assets/css/app.css" />
+  </head>
+  <body data-ng-app="AndeysApp">
+    <header class="fixed">
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="#/intro">Andeys</a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a><span>Menu</span></a></li>
+        </ul>
+        <div class="top-bar-section">
+          <ul class="right">
+            <li><a href="#/photos">Photos</a></li>
+            <li><a href="#/travelogs">Travelogs</a></li>
+            <li><a href="#/waterfalls">Waterfalls</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div data-ng-view></div>
+    <script src="/assets/js/angular.js"></script>
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/templates.js"></script>
+  </body>
+</html>

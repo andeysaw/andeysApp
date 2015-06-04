@@ -1,0 +1,245 @@
+// About page icons
+.icon-link {
+  margin-bottom: rem-calc(10);
+}
+
+@media #{$small-only} {
+  .icon-link {
+    padding-top: rem-calc(10);
+    border-top: rem-calc(1) solid $aluminum;
+    margin-top: rem-calc(10);
+  }
+}
+
+// Margins for figures used in photos and travelogs
+figure {
+  margin: 0 0 1.5%;
+  &.left {
+    margin-right: 1.5%;
+  }
+  &.right {
+    margin-left: 1.5%;
+  }
+}
+
+// Container for the large album image
+.album-image {
+  margin-top: rem-calc(10);
+  img {
+    max-height: rem-calc(625);
+    display: block;
+    margin: auto;
+    border: rem-calc(1) solid $black;
+  }
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  text-shadow: rem-calc(1) rem-calc(1) rem-calc(2) $black;
+  font-size: rem-calc(40);
+  &.previous {
+    left: 0;
+    margin-left: 5%;
+  }
+  &.next {
+    right: 0;
+    margin-right: 5%;
+    text-align: right;
+  }
+}
+
+.chevron {
+  margin-top: rem-calc(30);
+  color: $black;
+}
+
+.chevron-left {
+  float: left;
+  margin-right: rem-calc(5);
+}
+
+.chevron-right {
+  float: right;
+  margin-left: rem-calc(5);
+}
+
+.arrow {
+  top: 40%;
+  position: relative;
+  display: inline-block;
+  color: $white;
+  text-align: middle;
+}
+
+.thumb-wrapper {
+  overflow-x: auto;
+}
+
+.thumb-list {
+  white-space: nowrap;
+  margin: 0;
+  li {
+    display: inline;
+    list-style-type: none;
+    padding-left: rem-calc(2);
+    padding-right: rem-calc(2);
+    cursor: pointer;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.featured-image {
+  transition: opacity 0.5s linear;
+  opacity: 1;
+}
+
+.fader {
+  opacity: 0;
+}
+
+.spin-overlay {
+  position: absolute;
+  margin: auto;
+  margin-top: rem-calc(200);
+  text-align: center;
+  width: 100%;
+}
+
+// Side nav used in travelogs
+.side-nav {
+  background-color: $snow;
+  .active {
+    a {
+      &:before,
+      &:after {
+        content:'-';
+        color: $aluminum;
+      }
+    }
+  }
+}
+
+// Intro paragraph in each major section
+.intro {
+  margin-top: rem-calc(10);
+  margin-bottom: rem-calc(20);
+}
+
+// Main image used in about section
+.hero-container {
+  position: relative;
+  .button-group {
+    position: absolute;
+  }
+  @media #{$small-only} {
+    min-height: rem-calc(260);
+    .button-group {
+      top: rem-calc(15);
+      left: rem-calc(15);
+    }    
+  }
+  @media #{$medium-up} {
+    min-height: rem-calc(450);
+    .button-group {
+      top: rem-calc(30);
+      left: rem-calc(40);
+    }
+  }
+  @media #{$large-up} {
+    margin-top: rem-calc(10);
+  }
+}
+
+.parallax {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: rem-calc(1) solid $black;
+}
+
+.hero-image {
+  position: relative;
+  right: 10%;
+  bottom: 10%;
+  width: 120%;
+  height: 120%;
+  background-image: url(/assets/images/about/andeys.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// List of trips
+.trip-list {
+  h2 {
+    color: $white;
+    text-shadow: rem-calc(1) rem-calc(1) rem-calc(2) $black;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  li {
+    margin: 0 rem-calc(15) rem-calc(25);
+  }
+  .trip-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .trip-entry {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: rem-calc(300);
+    max-width: rem-calc(450);
+    height: rem-calc(300);
+    border: rem-calc(1) solid $black;
+    flex: 1 0 auto;
+  }
+  .trip-entry-select {
+    transform: scale(1.05, 1.05);
+  }
+}
+.trip-title {
+  width: 100%;
+  height: 100%;
+}
+
+// No floating for small screen travelogs
+@media #{$small-only} {
+  .trip-template {
+    .left, .right {
+      float: none !important;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+.modal {
+  margin: 0;
+  img {
+    max-height: rem-calc(700);
+    border: rem-calc(1) solid $black;
+  }
+}
+
+// Form behavior
+form {
+  .ng-dirty {
+    &.ng-invalid {
+      border: rem-calc(1) solid $alert-color;
+    }
+    &.ng-valid {
+      border: rem-calc(1) solid $success-color;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+/* humanstxt.org */
+
+/* SITE */
+	Developer: Andrew Sawadisavi
+  Standards: HTML5, CSS3
+  Components: Foundation, jQuery, Font Awesome, Angular (route, touch, foundation)
+  Software: Coda, Textmate, Git, Sublime Text, Gulp, Adobe Lightroom

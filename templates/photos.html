@@ -1,0 +1,36 @@
+<section>
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>My Photography</h2>
+    </div>
+  </div>
+  <div class="row intro">
+    <div class="medium-12 columns text-justify">
+      <span class="show-for-medium-up">I compose and take my pictures as I go, more interested in exploring rather than waiting for the best light conditions. Also, I like to travel light, especially when hiking strenuously. As a result, I have taken many of my pictures with a point-and-shoot camera. I usually don't spend any longer than a minute to compose a shot, but always keep an eye on what may make a good photograph.</span> By default, photos are shown in a pseudo-random order.
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <button class="button" data-ng-click="PhotoCtrl.selectOrder('date')">Latest <span class="show-for-medium-up">First</span></button>
+      <button class="button" data-ng-click="PhotoCtrl.selectOrder('rank')">Random <span class="show-for-medium-up">Order</span></button>
+    </div>
+  </div>
+  <div class="row">
+    <andeys-scroller></andeys-scroller>
+    <div class="thumb-wrapper">
+      <ul class="small-12 columns thumb-list">
+        <li data-ng-repeat="entry in PhotoCtrl.entries | orderBy:PhotoCtrl.ordering" data-ng-click="PhotoCtrl.setImageFromThumb(entry)" role="button" aria-label="Thumbnail">
+          <img aria-hidden=true class="thumbnail" data-ng-src="/assets/images/photos/{{ entry.date | date:'yyyy' }}/{{ entry.date | date:'MM' }}/{{ entry.filename }}-th.jpg">
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row album-image" data-ng-swipe-right="PhotoCtrl.switchImage('prev')" data-ng-swipe-left="PhotoCtrl.switchImage('next')">
+    <figure class="small-12 columns">
+      <img class="featured-image" data-ng-src="/assets/images/photos/{{ PhotoCtrl.currentImage.date | date:'yyyy' }}/{{ PhotoCtrl.currentImage.date | date:'MM' }}/{{ PhotoCtrl.currentImage.filename }}.jpg">
+      <figcaption class="text-center" data-ng-bind-html="PhotoCtrl.currentImage.description + ' (' + PhotoCtrl.currentImage.location + ')'"></figcaption>
+    </figure>
+    <andeys-switch-image></andeys-switch-image>
+    <andeys-spinner></andeys-spinner>
+  </div>
+</section>

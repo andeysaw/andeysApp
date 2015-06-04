@@ -1,0 +1,22 @@
+<section>
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>Travelogs</h2>
+    </div>
+  </div>
+  <div class="row show-for-medium-up intro">
+    <div class="medium-12 columns text-justify">
+      I love to travel. Most of the time I go on trips to the great outdoors, but I also enjoy visiting cities to see the architecture, museums and interaction of people. Hiking, walking and sightseeing are the main focus of most trips, but I also like to learn area history and taste local food.
+    </div>
+  </div>
+  <div class="row trip-list">
+    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 trip-grid">
+      <li class="trip-entry" ng-style="{'background-image':TravelogCtrl.initBackground(entry.title, $index)}" data-ng-repeat="entry in TravelogCtrl.entries | orderBy: '-startDate'" title="A {{entry.days}} day trip that started on {{entry.startDate | date: 'MMMM d, yyyy'}}." data-ng-mouseenter="TravelogCtrl.animateSelection($event)" data-andeys-background-load="{{entry.title}}">
+        <a data-ng-href="#/travelogs/{{entry.startDate | date: 'yyyy-MM-dd'}}">
+          <div class="trip-title">
+            <h2 data-ng-bind-html="entry.title"></h2>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </did>

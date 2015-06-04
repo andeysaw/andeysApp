@@ -1,0 +1,23 @@
+<div class="trip-template" data-ng-if="TripCtrl.tripName" data-ng-swipe-right="TripCtrl.goPrevDay()" data-ng-swipe-left="TripCtrl.goNextDay()">
+  <ul class="side-nav hide-for-small medium-2 columns" role="navigation" title="Link List">
+    <li role="menuitem" data-ng-repeat="date in TripCtrl.dateArray" class="text-center" data-ng-class="{active: date == TripCtrl.tripDate}">
+      <a href="#" data-ng-href="#/travelogs/{{date}}">{{date | date: 'mediumDate'}}</a>
+    </li>
+  </ul>
+  <div class="small-12 medium-10 columns">
+  <section class="clearfix">
+    <h2><span data-ng-bind-html="TripCtrl.tripName + ' Trip Day ' + TripCtrl.dayOfTrip"></span></h2>
+    <div class="row hide-for-medium-up">
+      <form>
+        <label for="tripDate">Choose Trip Date</label>
+        <select id="tripDate" data-ng-options="date as date | date: 'mediumDate' for date in TripCtrl.dateArray" data-ng-model="TripCtrl.tripDate" data-ng-change="TripCtrl.updatePath(TripCtrl.tripDate)"></select>
+      </form>
+    </div>
+    <h3 class="hide-for-small">{{TripCtrl.tripDate | date:'fullDate'}}</h3>
+    <andeys-trip-log date="{{TripCtrl.tripDate | date:'yyyy-MM-dd'}}" class="text-justify"></andeys-trip-log>
+  </section>
+  <ul class="button-group small-12">
+    <li><a class="button" data-ng-click="TripCtrl.goPrevDay()" data-ng-class="{disabled: TripCtrl.noPrevDay()}">Previous Day</a></li>
+    <li><a class="button" data-ng-click="TripCtrl.goNextDay()" data-ng-class="{disabled: TripCtrl.noNextDay()}">Next Day</a></li>
+  </ul>
+</div>
